@@ -25,13 +25,21 @@ function FAQItem({ q, a }: { q: string; a: string }) {
   const [open, setOpen] = useState(false);
 
   return (
-    <div className={`faq-item ${open ? 'open' : ''}`} onClick={() => setOpen(!open)}>
-      <div className="faq-q">
+    <div className={`faq-item ${open ? 'open' : ''}`}>
+      <button
+        className="faq-q"
+        onClick={() => setOpen(!open)}
+        aria-expanded={open}
+      >
         <span>{q}</span>
-        <span className="faq-icon">{open ? '−' : '+'}</span>
-      </div>
+        <span className="faq-icon" aria-hidden="true">{open ? '&#8722;' : '+'}</span>
+      </button>
 
-      <div className="faq-a" style={{ maxHeight: open ? '200px' : '0' }}>
+      <div
+        className="faq-a"
+        style={{ maxHeight: open ? '200px' : '0' }}
+        aria-hidden={!open}
+      >
         <p>{a}</p>
       </div>
     </div>
