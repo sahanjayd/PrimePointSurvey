@@ -1950,6 +1950,22 @@ button {
     grid-template-columns: 1fr;
   }
 
+  /* Services page hero: stack card below copy */
+  .services-hero {
+    grid-template-columns: 1fr;
+  }
+
+  /* Home services preview: 2-col on tablet */
+  .home-services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Services CTA: stack on tablet */
+  .services-cta {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
   /* 2-column on tablet, 1-column at mobile breakpoint below */
   .services-grid,
   .why-grid {
@@ -2104,8 +2120,10 @@ button {
   }
 
   /* Single column on mobile */
+  .home-services-grid,
   .services-grid,
-  .why-grid {
+  .why-grid,
+  .process-grid {
     grid-template-columns: 1fr;
   }
 
@@ -2115,6 +2133,11 @@ button {
 
   /* Page padding */
   .page {
+    padding: 8rem 1.25rem 4rem;
+  }
+
+  .services-page,
+  .contact-page {
     padding: 8rem 1.25rem 4rem;
   }
 
@@ -2131,5 +2154,15 @@ button {
   .cta-band {
     flex-direction: column;
     align-items: flex-start;
+  }
+
+  /* Contact: remove sticky so info cards scroll naturally */
+  .contact-left {
+    position: static;
+  }
+
+  /* Services CTA on mobile */
+  .services-cta {
+    padding: 2rem 1.25rem;
   }
 }

@@ -3,7 +3,7 @@ import Link from 'next/link';
 const services = [
   {
     title: 'Pre-Purchase Inspections',
-    desc: 'Know what you’re buying before you commit, with clear reporting and practical advice.',
+    desc: "Know what you're buying before you commit, with clear reporting and practical advice.",
     category: 'Buyers',
     icon: (
       <svg viewBox="0 0 24 24" aria-hidden="true">
@@ -54,7 +54,7 @@ export default function HomePage() {
           </div>
 
           <h1 className="hero-h1">
-            Inspection Services &<br />
+            Inspection Services &amp;<br />
             <em>Independent Advice</em>
           </h1>
 
@@ -66,11 +66,14 @@ export default function HomePage() {
 
           <div className="hero-btns">
             <Link href="/contact" className="btn btn-primary">
-              Request a Quote →
+              Request a Quote
             </Link>
 
             <a href="tel:0415184565" className="btn btn-ghost">
-              📞 0415 184 565
+              <svg className="btn-icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M5 4h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.04 11.04 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498A1 1 0 0121 17v3a2 2 0 01-2 2C9.716 22 2 14.284 2 5a2 2 0 012-2h1z" />
+              </svg>
+              0415 184 565
             </a>
           </div>
         </div>
@@ -92,7 +95,7 @@ export default function HomePage() {
                     <path d="M12 2v4M12 18v4M2 12h4M18 12h4" />
                   </svg>
                 </span>
-                <span>Independent & Unbiased</span>
+                <span>Independent &amp; Unbiased</span>
               </div>
 
               <div className="trust-badge">
@@ -103,7 +106,7 @@ export default function HomePage() {
                     <path d="M9 13h6M9 17h6" />
                   </svg>
                 </span>
-                <span>Clear Photos & Reports</span>
+                <span>Clear Photos &amp; Reports</span>
               </div>
 
               <div className="trust-badge">
@@ -151,7 +154,7 @@ export default function HomePage() {
         <div className="about-quote">
           <div className="about-quote-inner">
             <p className="about-quote-text">
-              “Good decisions start with accurate information and honest advice.”
+              &#8220;Good decisions start with accurate information and honest advice.&#8221;
             </p>
           </div>
         </div>
@@ -177,7 +180,6 @@ export default function HomePage() {
             <article key={service.title} className="home-service-card">
               <div className="service-card-top">
                 <div className="service-icon-wrap">{service.icon}</div>
-
                 <span className="service-category">{service.category}</span>
               </div>
 
@@ -197,7 +199,11 @@ export default function HomePage() {
 
       <section className="cta-band">
         <div>
-          <div className="cta-icon">🏗</div>
+          <div className="cta-icon">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+            </svg>
+          </div>
 
           <h2 className="cta-title">Need an inspection or advice?</h2>
 
@@ -209,11 +215,14 @@ export default function HomePage() {
 
         <div className="cta-btns">
           <Link href="/contact" className="btn btn-navy">
-            📋 Request a Quote
+            Request a Quote
           </Link>
 
           <a href="tel:0415184565" className="btn btn-outline-navy">
-            📞 Call 0415 184 565
+            <svg className="btn-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M5 4h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.04 11.04 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498A1 1 0 0121 17v3a2 2 0 01-2 2C9.716 22 2 14.284 2 5a2 2 0 012-2h1z" />
+            </svg>
+            Call 0415 184 565
           </a>
         </div>
       </section>

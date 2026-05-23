@@ -144,7 +144,7 @@ export default function SiteShell({ children }: { children: ReactNode }) {
 
           <a
             href="https://primepointsurveying.com.au"
-            target="blank"
+            target="_blank"
             rel="noopener noreferrer"
             className="footer-contact-item"
            >
