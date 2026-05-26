@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import CredentialSection from '../components/CredentialSection';
 
 export default function AboutPage() {
   return (
@@ -50,6 +51,8 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
+
+      <CredentialSection />
 
       <section className="why">
         <div className="why-header">

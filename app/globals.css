@@ -920,9 +920,302 @@ button {
   opacity: 1;
 }
 
+/* ── Service card footer: price + best for ─────────────────────── */
+.service-card-footer {
+  margin-top: auto;
+  padding-top: 1.2rem;
+  border-top: 1px solid var(--border);
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1rem;
+  position: relative;
+  z-index: 1;
+}
+
+.service-best-sm {
+  flex: 1;
+  min-width: 0;
+}
+
+.service-best-sm span {
+  display: block;
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: var(--blue);
+  margin-bottom: 0.3rem;
+}
+
+.service-best-sm p {
+  font-size: 0.84rem;
+  color: var(--navy);
+  line-height: 1.5;
+}
+
+.service-price {
+  font-family: 'DM Serif Display', serif;
+  font-size: 1.6rem;
+  color: var(--navy);
+  white-space: nowrap;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.service-price-badge {
+  background: rgba(26, 86, 219, 0.09);
+  border: 1px solid rgba(26, 86, 219, 0.16);
+  color: var(--blue);
+  border-radius: 999px;
+  padding: 0.3rem 0.8rem;
+  font-size: 0.87rem;
+  font-weight: 700;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+/* Surcharge notice */
+.surcharge-banner {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  background: rgba(245, 158, 11, 0.07);
+  border: 1px solid rgba(245, 158, 11, 0.22);
+  border-radius: 12px;
+  padding: 0.85rem 1.15rem;
+  margin-top: 1.35rem;
+  font-size: 0.9rem;
+  color: var(--navy);
+  line-height: 1.55;
+}
+
+.surcharge-icon {
+  color: var(--accent);
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+}
+
+.surcharge-icon svg {
+  width: 20px;
+  height: 20px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+}
+
+/* Additional services — 4-col grid override */
+.services-grid-4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+/* ── Complex Claims ─────────────────────────────────────────────── */
+.complex-claims-section {
+  margin-bottom: 5rem;
+}
+
+.complex-claims-inner {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 3rem;
+  align-items: center;
+  background:
+    linear-gradient(145deg, rgba(13, 31, 60, 0.98), rgba(22, 45, 80, 0.98)),
+    var(--navy);
+  border-radius: 24px;
+  padding: 3.5rem;
+  overflow: hidden;
+  position: relative;
+}
+
+.complex-claims-inner::before {
+  content: '';
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  right: -60px;
+  top: -60px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(59, 130, 246, 0.18), transparent 70%);
+}
+
+.complex-claims-content {
+  position: relative;
+  z-index: 1;
+}
+
+.complex-claims-content .section-eyebrow {
+  color: var(--accent);
+}
+
+.complex-claims-content .section-title {
+  color: var(--white);
+}
+
+.complex-claims-content .section-body {
+  color: rgba(255, 255, 255, 0.68);
+}
+
+.complex-claims-rate {
+  position: relative;
+  z-index: 1;
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(147, 197, 253, 0.18);
+  border-radius: 20px;
+  padding: 2.25rem;
+  text-align: center;
+}
+
+.complex-rate-label {
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.75rem;
+}
+
+.complex-rate-price {
+  font-family: 'DM Serif Display', serif;
+  font-size: 3.6rem;
+  color: var(--white);
+  line-height: 1;
+  margin-bottom: 0.75rem;
+}
+
+.complex-rate-price span {
+  font-size: 1.4rem;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.complex-claims-rate > p {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.5);
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+/* ── Defects Gallery ────────────────────────────────────────────── */
+.defects-section {
+  margin-bottom: 5rem;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  padding: 3.5rem;
+  box-shadow: 0 20px 55px rgba(13, 31, 60, 0.05);
+}
+
+.defects-intro-list {
+  max-width: 820px;
+  margin: 0 auto 2.75rem;
+}
+
+.defects-intro-list p {
+  color: var(--slate);
+  margin-bottom: 1rem;
+  line-height: 1.7;
+}
+
+.defects-intro-list ul {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.55rem;
+}
+
+.defects-intro-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.55rem;
+  color: var(--navy);
+  font-size: 0.91rem;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.defects-intro-list li::before {
+  content: '→';
+  color: var(--blue);
+  font-size: 0.82rem;
+  flex-shrink: 0;
+  margin-top: 0.15rem;
+}
+
+.defects-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+}
+
+.defect-card {
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background: var(--white);
+  box-shadow: 0 4px 14px rgba(13, 31, 60, 0.06);
+  opacity: 0;
+  transform: translateY(22px);
+  transition:
+    opacity 0.48s ease,
+    transform 0.48s ease,
+    box-shadow 0.3s ease;
+}
+
+.defect-card.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.defect-card.is-visible:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 18px 40px rgba(13, 31, 60, 0.12);
+}
+
+.defect-img-wrap {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+}
+
+.defect-img {
+  object-fit: cover;
+  transition: transform 0.45s ease;
+}
+
+.defect-card.is-visible:hover .defect-img {
+  transform: scale(1.06);
+}
+
+.defect-caption {
+  padding: 0.8rem 1rem;
+  font-size: 0.86rem;
+  font-weight: 600;
+  color: var(--navy);
+  line-height: 1.4;
+  border-top: 1px solid var(--border);
+  background: var(--light);
+}
+
+/* Home page service price */
+.home-service-price {
+  margin-top: 1.15rem;
+  font-family: 'DM Serif Display', serif;
+  font-size: 1.4rem;
+  color: var(--navy);
+  position: relative;
+  z-index: 1;
+  line-height: 1;
+}
+
 /* Services responsive */
 @media (max-width: 1100px) {
   .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .services-grid-4 {
     grid-template-columns: repeat(2, 1fr);
   }
 
@@ -932,6 +1225,14 @@ button {
 
   .services-inclusions {
     grid-template-columns: 1fr;
+  }
+
+  .complex-claims-inner {
+    grid-template-columns: 1fr;
+  }
+
+  .defects-gallery {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
@@ -1941,6 +2242,331 @@ button {
   margin-top: -0.2rem;
 }
 
+/* ── Credential Section (About page) ───────────────────────────── */
+.credential-section {
+  margin: 4rem 0 0;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  padding: 3.5rem;
+  box-shadow: 0 20px 55px rgba(13, 31, 60, 0.06);
+}
+
+.credential-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
+  align-items: stretch;
+  margin-top: 2.5rem;
+}
+
+.credential-card {
+  background:
+    linear-gradient(145deg, rgba(13, 31, 60, 0.98), rgba(22, 45, 80, 0.98)),
+    var(--navy);
+  border: 1px solid rgba(245, 158, 11, 0.22);
+  border-radius: 20px;
+  padding: 2.5rem;
+  position: relative;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease, box-shadow 0.3s ease;
+}
+
+.credential-section.is-visible .credential-card {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.credential-card:hover {
+  box-shadow: 0 0 0 1px rgba(245, 158, 11, 0.4), 0 24px 60px rgba(13, 31, 60, 0.22);
+}
+
+.credential-card::before {
+  content: '';
+  position: absolute;
+  width: 240px;
+  height: 240px;
+  right: -70px;
+  bottom: -70px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(245, 158, 11, 0.1), transparent 70%);
+}
+
+.credential-card-icon {
+  width: 56px;
+  height: 56px;
+  background: rgba(245, 158, 11, 0.13);
+  border: 1px solid rgba(245, 158, 11, 0.28);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  position: relative;
+  z-index: 1;
+  transition: box-shadow 0.3s ease;
+}
+
+.credential-card:hover .credential-card-icon {
+  box-shadow: 0 0 0 5px rgba(245, 158, 11, 0.1);
+}
+
+.credential-card-icon svg {
+  width: 27px;
+  height: 27px;
+  fill: none;
+  stroke: var(--accent);
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.credential-tag {
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.75rem;
+  position: relative;
+  z-index: 1;
+}
+
+.credential-title {
+  font-family: 'DM Serif Display', serif;
+  font-size: 1.65rem;
+  color: var(--white);
+  line-height: 1.2;
+  position: relative;
+  z-index: 1;
+}
+
+.credential-divider {
+  width: 100%;
+  height: 1px;
+  margin: 1.5rem 0;
+  background: linear-gradient(
+    90deg,
+    rgba(245, 158, 11, 0.45),
+    rgba(255, 255, 255, 0.1),
+    transparent
+  );
+  position: relative;
+  z-index: 1;
+}
+
+.credential-desc {
+  font-size: 0.92rem;
+  color: rgba(255, 255, 255, 0.65);
+  line-height: 1.8;
+  position: relative;
+  z-index: 1;
+}
+
+/* Trust items (right column) */
+.trust-items {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  justify-content: center;
+}
+
+.trust-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: var(--light);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 1rem 1.25rem;
+  opacity: 0;
+  transition:
+    box-shadow 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.credential-section.is-visible .trust-item {
+  animation: trustItemReveal 0.5s ease both;
+}
+
+.credential-section.is-visible .trust-item:nth-child(1) { animation-delay: 0.15s; }
+.credential-section.is-visible .trust-item:nth-child(2) { animation-delay: 0.25s; }
+.credential-section.is-visible .trust-item:nth-child(3) { animation-delay: 0.35s; }
+.credential-section.is-visible .trust-item:nth-child(4) { animation-delay: 0.45s; }
+.credential-section.is-visible .trust-item:nth-child(5) { animation-delay: 0.55s; }
+
+.trust-item:hover {
+  border-color: rgba(26, 86, 219, 0.22);
+  box-shadow: 0 4px 14px rgba(13, 31, 60, 0.08);
+  transform: translateX(4px);
+}
+
+.trust-item-icon {
+  width: 36px;
+  height: 36px;
+  background: rgba(26, 86, 219, 0.08);
+  border: 1px solid rgba(26, 86, 219, 0.13);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.trust-item-icon svg {
+  width: 17px;
+  height: 17px;
+  fill: none;
+  stroke: var(--blue);
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.trust-item-label {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--navy);
+  line-height: 1.35;
+}
+
+@keyframes trustItemReveal {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Home page About credential card ────────────────────────────── */
+.about-credential-home {
+  background:
+    linear-gradient(145deg, rgba(13, 31, 60, 0.98), rgba(22, 45, 80, 0.98)),
+    var(--navy);
+  border: 1px solid rgba(245, 158, 11, 0.18);
+  border-radius: 24px;
+  width: 100%;
+  max-width: 430px;
+  justify-self: end;
+  overflow: hidden;
+  box-shadow: 0 16px 36px rgba(13, 31, 60, 0.16);
+  position: relative;
+}
+
+.about-credential-home::before {
+  content: '';
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  right: -55px;
+  top: -55px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(245, 158, 11, 0.1), transparent 70%);
+}
+
+.about-credential-home-inner {
+  padding: 2.2rem;
+  position: relative;
+  z-index: 1;
+}
+
+.about-credential-home-icon {
+  width: 48px;
+  height: 48px;
+  background: rgba(245, 158, 11, 0.14);
+  border: 1px solid rgba(245, 158, 11, 0.28);
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.25rem;
+}
+
+.about-credential-home-icon svg {
+  width: 24px;
+  height: 24px;
+  fill: none;
+  stroke: var(--accent);
+  stroke-width: 1.9;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.about-credential-home-label {
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.3rem;
+}
+
+.about-credential-home-title {
+  font-family: 'DM Serif Display', serif;
+  font-size: 1.6rem;
+  color: var(--white);
+  line-height: 1.15;
+}
+
+.about-credential-home-divider {
+  width: 100%;
+  height: 1px;
+  margin: 1.4rem 0;
+  background: linear-gradient(
+    90deg,
+    rgba(245, 158, 11, 0.4),
+    rgba(255, 255, 255, 0.08),
+    transparent
+  );
+}
+
+.about-credential-home-badges {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.about-home-badge {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 999px;
+  padding: 0.5rem 0.9rem;
+  font-size: 0.79rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.about-home-badge svg {
+  width: 14px;
+  height: 14px;
+  fill: none;
+  stroke: #93c5fd;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  flex-shrink: 0;
+}
+
+/* Qualification highlight text in home About section */
+.about-qual-text {
+  color: var(--navy);
+  font-weight: 500;
+  border-left: 3px solid var(--accent);
+  padding-left: 0.9rem;
+  margin-top: -0.2rem;
+}
+
+/* Footer tagline update */
+.footer-tagline {
+  line-height: 1.65;
+  max-width: 290px;
+  margin-top: 0.5rem;
+  color: rgba(255, 255, 255, 0.52);
+}
+
 /* ===== Tablet (≤900px) ===== */
 @media (max-width: 900px) {
   .hero,
@@ -1981,7 +2607,16 @@ button {
     gap: 2rem;
   }
 
-  .about-quote {
+  .defects-intro-list ul {
+    grid-template-columns: 1fr;
+  }
+
+  .credential-inner {
+    grid-template-columns: 1fr;
+  }
+
+  .about-quote,
+  .about-credential-home {
     max-width: 100%;
     justify-self: stretch;
   }
@@ -2122,9 +2757,26 @@ button {
   /* Single column on mobile */
   .home-services-grid,
   .services-grid,
+  .services-grid-4,
   .why-grid,
   .process-grid {
     grid-template-columns: 1fr;
+  }
+
+  .defects-section {
+    padding: 2rem 1.25rem;
+  }
+
+  .defects-gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .complex-claims-inner {
+    padding: 2rem 1.25rem;
+  }
+
+  .complex-claims-rate {
+    text-align: left;
   }
 
   .footer-top {

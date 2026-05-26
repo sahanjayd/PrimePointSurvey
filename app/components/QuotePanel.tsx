@@ -6,12 +6,16 @@ type QuotePanelProps = {
 };
 
 const services = [
-  'Pre-Purchase Inspection',
-  'PCI / Handover Inspection',
-  'Defect Report',
-  'Dilapidation Report',
-  'Warranty Inspection',
-  'Maintenance Report',
+  'Minor Damage / Causation Report',
+  'Major Damage / Structural Report',
+  'Full Insurance Assessment incl. Scope of Works',
+  'Re-Inspection / Follow-Up Report',
+  'Urgent / Same-Day Assessment',
+  'Moisture Mapping',
+  'Thermal Imaging Scan',
+  'Roof Void Inspection',
+  'Detailed Scope of Works Only',
+  'Complex Claim (Hourly)',
 ];
 
 export default function QuotePanel({ open, onClose }: QuotePanelProps) {

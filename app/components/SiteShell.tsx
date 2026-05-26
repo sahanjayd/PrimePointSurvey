@@ -112,7 +112,9 @@ export default function SiteShell({ children }: { children: ReactNode }) {
             </Link>
 
             <div className="footer-tagline">
-              Your property, inspected properly.
+              Independent Building Consultant&nbsp;&mdash;<br />
+              Providing detailed causation and damage reports for insurers,
+              builders, and property managers.
             </div>
           </div>
 
@@ -161,10 +163,10 @@ export default function SiteShell({ children }: { children: ReactNode }) {
           <div>
             <div className="footer-col-title">Services</div>
             <ul className="footer-col-links">
-              <li><Link href="/services">Pre-Purchase</Link></li>
-              <li><Link href="/services">PCI / Handover</Link></li>
-              <li><Link href="/services">Defect Reports</Link></li>
-              <li><Link href="/services">Dilapidation</Link></li>
+              <li><Link href="/services">Insurance Assessments</Link></li>
+              <li><Link href="/services">Moisture Mapping</Link></li>
+              <li><Link href="/services">Thermal Imaging</Link></li>
+              <li><Link href="/services">Scope of Works</Link></li>
             </ul>
           </div>
 

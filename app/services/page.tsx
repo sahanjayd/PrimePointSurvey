@@ -1,11 +1,12 @@
 import Link from 'next/link';
+import DefectsGallery from '../components/DefectsGallery';
 
-const services = [
+const insuranceServices = [
   {
-    category: 'Insurance',
-    title: 'Insurance Damage Assessments',
-    desc: 'Independent assessment of property damage for insurance-related matters, helping identify visible defects, likely causes, and repair considerations.',
-    bestFor: 'Insurance claims, storm damage, water damage, impact damage',
+    title: 'Minor Damage / Causation Report',
+    desc: 'Assessment and reporting of minor property damage including visible defects, likely cause, and repair recommendations for insurance submissions.',
+    bestFor: 'Minor storm, impact or moisture damage claims',
+    price: '$550',
     icon: (
       <svg viewBox="0 0 24 24" aria-hidden="true">
         <path d="M12 3l7 3v5c0 4.5-2.8 8.5-7 10-4.2-1.5-7-5.5-7-10V6z" />
@@ -14,24 +15,23 @@ const services = [
     ),
   },
   {
-    category: 'Reporting',
-    title: 'Causation Reports',
-    desc: 'Clear reporting to help determine likely causes of building issues, movement, moisture damage, construction defects, or property deterioration.',
-    bestFor: 'Defect disputes, insurance matters, building damage investigation',
+    title: 'Major Damage / Structural Report',
+    desc: 'Thorough assessment of significant structural or building damage with detailed findings, cause analysis, and rectification guidance.',
+    bestFor: 'Major storm events, structural damage, severe water damage',
+    price: '$750',
     icon: (
       <svg viewBox="0 0 24 24" aria-hidden="true">
-        <circle cx="11" cy="11" r="7" />
-        <path d="M16.5 16.5L21 21" />
-        <path d="M8.5 11h5" />
-        <path d="M11 8.5v5" />
+        <path d="M3 11l9-7 9 7" />
+        <path d="M5 10v10h14V10" />
+        <path d="M9 20v-6h6v6" />
       </svg>
     ),
   },
   {
-    category: 'Documentation',
-    title: 'Scope of Works',
-    desc: 'Practical scope documentation outlining required works, rectification items, repair recommendations, and priority actions.',
-    bestFor: 'Repair planning, builder communication, rectification works',
+    title: 'Full Insurance Assessment incl. Scope of Works',
+    desc: 'Comprehensive assessment covering all damage, cause analysis, a complete scope of works, and repair cost guidance for your insurer.',
+    bestFor: 'Full claims, complex damage, scope-required insurers',
+    price: '$950',
     icon: (
       <svg viewBox="0 0 24 24" aria-hidden="true">
         <path d="M7 3h7l4 4v14H7z" />
@@ -42,97 +42,63 @@ const services = [
     ),
   },
   {
-    category: 'Buyers',
-    title: 'Pre-Purchase Inspections',
-    desc: 'A detailed visual inspection before buying a property, helping you understand visible defects, risks, and potential repair concerns.',
-    bestFor: 'Home buyers, investors, auction preparation',
+    title: 'Re-Inspection / Follow-Up Report',
+    desc: 'Follow-up inspection to verify completed repairs, assess ongoing concerns, or provide updated findings for an existing claim.',
+    bestFor: 'Repair verification, ongoing claims, dispute follow-up',
+    price: '$295',
     icon: (
       <svg viewBox="0 0 24 24" aria-hidden="true">
-        <path d="M3 11l9-7 9 7" />
-        <path d="M5 10v10h14V10" />
-        <path d="M9 20v-6h6v6" />
+        <path d="M1 4v6h6" />
+        <path d="M23 20v-6h-6" />
+        <path d="M20.49 9A9 9 0 0 0 5.64 5.64L1 10M23 14l-4.64 4.36A9 9 0 0 1 3.51 15" />
+      </svg>
+    ),
+  },
+];
+
+const additionalServices = [
+  {
+    title: 'Moisture Mapping',
+    desc: 'Targeted moisture detection to identify water ingress, elevated moisture levels, or hidden dampness throughout the property.',
+    price: '$79',
+    icon: (
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M12 2C6.5 8.5 4 13 4 16a8 8 0 0 0 16 0c0-3-2.5-7.5-8-14z" />
       </svg>
     ),
   },
   {
-    category: 'New Builds',
-    title: 'PCI / Handover Inspections',
-    desc: 'Inspection before handover to identify incomplete works, poor finishes, defects, and items that should be addressed before final acceptance.',
-    bestFor: 'New homes, townhouses, apartments, builder handovers',
+    title: 'Thermal Imaging Scan',
+    desc: 'Infrared thermal imaging to detect temperature anomalies, moisture intrusion, insulation gaps, or concealed defects.',
+    price: '$99',
     icon: (
       <svg viewBox="0 0 24 24" aria-hidden="true">
-        <path d="M8 12l3 3 5-6" />
-        <path d="M4 6h16" />
-        <path d="M4 18h16" />
-        <path d="M6 6v12" />
-        <path d="M18 6v12" />
+        <circle cx="12" cy="12" r="3" />
+        <path d="M12 2v2M12 20v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M2 12h2M20 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" />
       </svg>
     ),
   },
   {
-    category: 'Defects',
-    title: 'Defect Reports',
-    desc: 'Detailed reporting of visible defects with notes, photos, and practical recommendations for rectification or further investigation.',
-    bestFor: 'Building defects, disputes, owner concerns, rectification requests',
+    title: 'Roof Void Inspection',
+    desc: 'Visual inspection of the roof space to identify structural concerns, moisture ingress, pest activity, or insulation deficiencies.',
+    price: '$79',
+    icon: (
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+        <path d="M9 22V12h6v10" />
+      </svg>
+    ),
+  },
+  {
+    title: 'Detailed Scope of Works Only',
+    desc: 'Preparation of a detailed scope of works document outlining required repairs, materials, priorities, and rectification guidance.',
+    price: '$350',
     icon: (
       <svg viewBox="0 0 24 24" aria-hidden="true">
         <path d="M8 3h8l2 3v15H6V6z" />
         <path d="M9 9h6" />
         <path d="M9 13h6" />
         <path d="M9 17h4" />
-      </svg>
-    ),
-  },
-  {
-    category: 'Condition',
-    title: 'Dilapidation Surveys',
-    desc: 'Condition surveys completed before nearby construction, excavation, demolition, or development works begin.',
-    bestFor: 'Pre-construction records, neighbouring properties, risk control',
-    icon: (
-      <svg viewBox="0 0 24 24" aria-hidden="true">
-        <path d="M4 19h16" />
-        <path d="M7 19V9l5-4 5 4v10" />
-        <path d="M9 19v-5h6v5" />
-        <path d="M4 12h4" />
-        <path d="M16 12h4" />
-      </svg>
-    ),
-  },
-  {
-    category: 'Condition',
-    title: 'Dilapidation Reports',
-    desc: 'Formal reporting that documents the existing condition of surrounding structures and assets before works commence.',
-    bestFor: 'Developers, builders, owners, asset protection',
-    icon: (
-      <svg viewBox="0 0 24 24" aria-hidden="true">
-        <path d="M4 20h16" />
-        <path d="M6 20L18 8" />
-        <path d="M8 8h10v10" />
-        <path d="M8 8l10 10" />
-      </svg>
-    ),
-  },
-  {
-    category: 'Warranty',
-    title: 'Warranty Inspections',
-    desc: 'Inspection before your builder warranty period expires, helping identify issues that should be raised before time runs out.',
-    bestFor: 'New builds, warranty periods, defect follow-up',
-    icon: (
-      <svg viewBox="0 0 24 24" aria-hidden="true">
-        <path d="M12 3l7 3v5c0 4.5-2.8 8.5-7 10-4.2-1.5-7-5.5-7-10V6z" />
-        <path d="M8.5 12.2l2.2 2.2 4.8-5" />
-      </svg>
-    ),
-  },
-  {
-    category: 'Maintenance',
-    title: 'Maintenance Reports',
-    desc: 'Practical maintenance reporting to help prioritise repairs, protect your property, and reduce long-term costs.',
-    bestFor: 'Property owners, landlords, asset managers',
-    icon: (
-      <svg viewBox="0 0 24 24" aria-hidden="true">
-        <path d="M14.7 6.3a4 4 0 0 0-5.3 5.3L4 17v3h3l5.4-5.4a4 4 0 0 0 5.3-5.3" />
-        <path d="M15 5l4 4" />
       </svg>
     ),
   },
@@ -173,18 +139,19 @@ const process = [
 export default function ServicesPage() {
   return (
     <main className="services-page">
+
       <section className="services-hero">
         <div className="services-hero-copy">
           <div className="section-eyebrow">Our Services</div>
 
           <h1 className="page-title">
-            Building inspection services for clearer property decisions.
+            Insurance assessments and specialist inspection services.
           </h1>
 
           <p className="page-sub">
-            From pre-purchase inspections to defect reports, insurance damage
-            assessments, dilapidation reports, and maintenance advice, we provide
-            practical reporting that helps you understand the condition of your property.
+            From insurance damage assessments and causation reports to moisture
+            mapping and thermal imaging, we provide independent reporting that
+            gives you clear, accurate information about your property.
           </p>
 
           <div className="services-hero-actions">
@@ -210,39 +177,115 @@ export default function ServicesPage() {
         </div>
       </section>
 
+      {/* Insurance Reporting Services */}
       <section className="services-section">
         <div className="services-section-header">
-          <div className="section-eyebrow">Service List</div>
-          <h2 className="section-title">Choose the right inspection service.</h2>
+          <div className="section-eyebrow">Insurance Reporting</div>
+          <h2 className="section-title">Insurance Assessment Services</h2>
           <p>
-            Each service is designed for a different property situation. If you
-            are unsure which one you need, send an enquiry and we can guide you.
+            Independent insurance assessments and damage reporting for property
+            claims across Melbourne. Each report is prepared to meet insurance
+            submission requirements.
           </p>
         </div>
 
         <div className="services-grid page-grid">
-          {services.map((service) => (
+          {insuranceServices.map((service) => (
             <article key={service.title} className="service-card">
               <div className="service-card-top">
                 <div className="service-icon-wrap">{service.icon}</div>
-                <span className="service-category">{service.category}</span>
+                <span className="service-category">Insurance</span>
               </div>
 
               <h2 className="service-title">{service.title}</h2>
               <p className="service-desc">{service.desc}</p>
 
-              <div className="service-best">
-                <span>Best for</span>
-                <p>{service.bestFor}</p>
+              <div className="service-card-footer">
+                <div className="service-best-sm">
+                  <span>Best for</span>
+                  <p>{service.bestFor}</p>
+                </div>
+                <div className="service-price">{service.price}</div>
               </div>
+            </article>
+          ))}
+        </div>
+
+        <div className="surcharge-banner">
+          <span className="surcharge-icon">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="12" cy="12" r="10" />
+              <path d="M12 8v4M12 16h.01" />
+            </svg>
+          </span>
+          <div>
+            <strong>Urgent / Same-Day Assessment</strong>
+            {' '}— a <strong>+$100 surcharge</strong> applies for same-day or
+            urgent assessment requests.
+          </div>
+        </div>
+      </section>
+
+      {/* Additional Services */}
+      <section className="services-section">
+        <div className="services-section-header">
+          <div className="section-eyebrow">Add-On Services</div>
+          <h2 className="section-title">Additional Inspection Services</h2>
+          <p>
+            Specialist tools and documentation that can be added to any
+            assessment or booked independently.
+          </p>
+        </div>
+
+        <div className="services-grid services-grid-4 page-grid">
+          {additionalServices.map((service) => (
+            <article key={service.title} className="service-card">
+              <div className="service-card-top">
+                <div className="service-icon-wrap">{service.icon}</div>
+                <div className="service-price-badge">{service.price}</div>
+              </div>
+
+              <h2 className="service-title">{service.title}</h2>
+              <p className="service-desc">{service.desc}</p>
             </article>
           ))}
         </div>
       </section>
 
+      {/* Complex Claims */}
+      <section className="complex-claims-section">
+        <div className="complex-claims-inner">
+          <div className="complex-claims-content">
+            <div className="section-eyebrow">Complex Claims</div>
+            <h2 className="section-title">Large or Complex Claims</h2>
+            <p className="section-body">
+              For large-scale, complex, or multi-element insurance claims
+              requiring extended site time, additional investigation, or expert
+              coordination, we work on a transparent hourly basis. We will
+              always confirm the estimated time before commencing.
+            </p>
+          </div>
+
+          <div className="complex-claims-rate">
+            <div className="complex-rate-label">Hourly Rate</div>
+            <div className="complex-rate-price">
+              $150<span>/hr</span>
+            </div>
+            <p>Billed in hourly increments. Estimated hours confirmed upfront.</p>
+            <Link href="/contact" className="btn btn-primary">
+              Discuss Your Claim
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Defects Gallery */}
+      <DefectsGallery />
+
+      {/* Inclusions */}
       <section className="services-inclusions">
         <div>
-          <div className="section-eyebrow">What’s Included</div>
+          <div className="section-eyebrow">What&apos;s Included</div>
           <h2 className="section-title">Clear reporting without the confusion.</h2>
           <p className="section-body">
             Our reports are designed to be practical. You get clear findings,
@@ -264,6 +307,7 @@ export default function ServicesPage() {
         </div>
       </section>
 
+      {/* Process */}
       <section className="services-process">
         <div className="services-section-header center">
           <div className="section-eyebrow">How It Works</div>
@@ -281,13 +325,14 @@ export default function ServicesPage() {
         </div>
       </section>
 
+      {/* CTA */}
       <section className="services-cta">
         <div>
           <div className="section-eyebrow">Need Help Choosing?</div>
           <h2>Not sure which inspection you need?</h2>
           <p>
-            Send us a quick enquiry with the property details and we’ll point you
-            toward the right service.
+            Send us a quick enquiry with the property details and we&apos;ll
+            point you toward the right service.
           </p>
         </div>
 
@@ -295,6 +340,7 @@ export default function ServicesPage() {
           Get Advice
         </Link>
       </section>
+
     </main>
   );
 }

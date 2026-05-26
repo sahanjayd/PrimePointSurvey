@@ -2,41 +2,40 @@ import Link from 'next/link';
 
 const services = [
   {
-    title: 'Pre-Purchase Inspections',
-    desc: "Know what you're buying before you commit, with clear reporting and practical advice.",
-    category: 'Buyers',
+    title: 'Full Insurance Assessment incl. Scope of Works',
+    desc: 'Comprehensive damage assessment, cause analysis, and complete scope of works prepared for insurance submission.',
+    category: 'Insurance',
+    price: '$950',
     icon: (
       <svg viewBox="0 0 24 24" aria-hidden="true">
-        <path d="M3 11l9-7 9 7" />
-        <path d="M5 10v10h14V10" />
-        <path d="M9 20v-6h6v6" />
+        <path d="M7 3h7l4 4v14H7z" />
+        <path d="M14 3v5h5" />
+        <path d="M9 13h6" />
+        <path d="M9 17h4" />
       </svg>
     ),
   },
   {
-    title: 'PCI / Handover Inspections',
-    desc: 'Identify defects, incomplete work, and finish issues before accepting handover.',
-    category: 'New Builds',
+    title: 'Minor Damage / Causation Report',
+    desc: 'Clear assessment of minor property damage including defect findings, probable cause, and repair recommendations.',
+    category: 'Insurance',
+    price: '$550',
     icon: (
       <svg viewBox="0 0 24 24" aria-hidden="true">
-        <path d="M8 12l3 3 5-6" />
-        <path d="M4 6h16" />
-        <path d="M4 18h16" />
-        <path d="M6 6v12" />
-        <path d="M18 6v12" />
+        <path d="M12 3l7 3v5c0 4.5-2.8 8.5-7 10-4.2-1.5-7-5.5-7-10V6z" />
+        <path d="M9 12l2 2 4-4" />
       </svg>
     ),
   },
   {
-    title: 'Defect & Causation Reports',
-    desc: 'Understand visible defects, likely causes, and recommended next steps.',
-    category: 'Reports',
+    title: 'Thermal Imaging Scan',
+    desc: 'Infrared thermal imaging to detect moisture intrusion, insulation gaps, and concealed defects not visible to the eye.',
+    category: 'Additional',
+    price: '$99',
     icon: (
       <svg viewBox="0 0 24 24" aria-hidden="true">
-        <circle cx="11" cy="11" r="7" />
-        <path d="M16.5 16.5L21 21" />
-        <path d="M8.5 11h5" />
-        <path d="M11 8.5v5" />
+        <circle cx="12" cy="12" r="3" />
+        <path d="M12 2v2M12 20v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M2 12h2M20 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" />
       </svg>
     ),
   },
@@ -146,16 +145,46 @@ export default function HomePage() {
             Melbourne. We work for you — not developers, agents or builders.
           </p>
 
+          <p className="section-body about-qual-text">
+            Qualified with an Advanced Diploma in Building Surveying, we combine
+            practical inspection knowledge with clear, evidence-based reporting.
+          </p>
+
           <Link href="/about" className="btn btn-navy">
             Learn More
           </Link>
         </div>
 
-        <div className="about-quote">
-          <div className="about-quote-inner">
-            <p className="about-quote-text">
-              &#8220;Good decisions start with accurate information and honest advice.&#8221;
-            </p>
+        <div className="about-credential-home">
+          <div className="about-credential-home-inner">
+            <div className="about-credential-home-icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
+                <path d="M6 12v5c3.33 1.67 8.67 1.67 12 0v-5" />
+              </svg>
+            </div>
+
+            <div className="about-credential-home-label">Advanced Diploma in</div>
+            <div className="about-credential-home-title">Building Surveying</div>
+
+            <div className="about-credential-home-divider" />
+
+            <div className="about-credential-home-badges">
+              <div className="about-home-badge">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M12 3l7 3v5c0 4.5-2.8 8.5-7 10-4.2-1.5-7-5.5-7-10V6z" />
+                  <path d="M9 12l2 2 4-4" />
+                </svg>
+                Professional Indemnity Insurance
+              </div>
+              <div className="about-home-badge">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M12 3l7 3v5c0 4.5-2.8 8.5-7 10-4.2-1.5-7-5.5-7-10V6z" />
+                  <path d="M12 9v4M12 16h.01" />
+                </svg>
+                Public Liability Insurance
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -169,9 +198,9 @@ export default function HomePage() {
           </h2>
 
           <p className="section-body services-preview-sub">
-            A quick look at our core inspection services. Visit the services page
-            for insurance assessments, dilapidation reports, warranty
-            inspections, maintenance reports, and more.
+            A snapshot of our main services. Visit the services page for our
+            full pricing list, including moisture mapping, thermal imaging, roof
+            void inspections, and complex claim rates.
           </p>
         </div>
 
@@ -186,6 +215,8 @@ export default function HomePage() {
               <h3 className="service-title">{service.title}</h3>
 
               <p className="service-desc">{service.desc}</p>
+
+              <div className="home-service-price">{service.price}</div>
             </article>
           ))}
         </div>
