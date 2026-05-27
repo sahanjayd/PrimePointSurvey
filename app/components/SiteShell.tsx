@@ -145,7 +145,7 @@ export default function SiteShell({ children }: { children: ReactNode }) {
           </a>
 
           <a
-            href="https://primepointsurveying.com.au"
+            href="https://primepointsurvey.com.au"
             target="_blank"
             rel="noopener noreferrer"
             className="footer-contact-item"
@@ -156,7 +156,7 @@ export default function SiteShell({ children }: { children: ReactNode }) {
                   <path d="M2 12h20M12 2a15.3 15.3 0 010 20M12 2a15.3 15.3 0 000 20" />
                 </svg>
               </span>
-              <span>primepointsurveying.com.au</span>
+              <span>primepointsurvey.com.au</span>
           </a>
           </div>
 
