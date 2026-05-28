@@ -59,7 +59,17 @@ export default function TermsPage() {
           reliance on the report by any third party.
         </p>
 
-        <h2>4. Payment</h2>
+        <h2>4. Australian Consumer Law</h2>
+
+        <p>
+          Nothing in these Terms &amp; Conditions limits or excludes any rights
+          or guarantees you are entitled to under the Australian Consumer Law
+          (ACL). Our services come with guarantees that cannot be excluded under
+          the ACL. Where permitted, our liability is limited to the re-supply of
+          the services or a refund of the service fee paid.
+        </p>
+
+        <h2>5. Payment</h2>
 
         <p>
           Payment terms will be communicated at the time of booking. We reserve
@@ -72,7 +82,7 @@ export default function TermsPage() {
           incur a cancellation fee.
         </p>
 
-        <h2>5. Report Delivery</h2>
+        <h2>6. Report Delivery</h2>
 
         <p>
           Reports will be delivered electronically via email in PDF format.
@@ -80,7 +90,7 @@ export default function TermsPage() {
           unless otherwise agreed.
         </p>
 
-        <h2>6. Accuracy of Information</h2>
+        <h2>7. Accuracy of Information</h2>
 
         <p>
           The client is responsible for providing accurate property access
@@ -89,7 +99,7 @@ export default function TermsPage() {
           by inaccurate or incomplete information provided by the client.
         </p>
 
-        <h2>7. Intellectual Property</h2>
+        <h2>8. Intellectual Property</h2>
 
         <p>
           All reports, documentation, and content produced by Prime Point
@@ -97,7 +107,7 @@ export default function TermsPage() {
           reproduced, republished, or distributed without our written consent.
         </p>
 
-        <h2>8. Website Use</h2>
+        <h2>9. Website Use</h2>
 
         <p>
           The content on this website is provided for general information
@@ -111,7 +121,7 @@ export default function TermsPage() {
           without notice.
         </p>
 
-        <h2>9. Governing Law</h2>
+        <h2>10. Governing Law</h2>
 
         <p>
           These Terms &amp; Conditions are governed by the laws of Victoria,
@@ -119,7 +129,7 @@ export default function TermsPage() {
           of the courts of Victoria.
         </p>
 
-        <h2>10. Contact Us</h2>
+        <h2>11. Contact Us</h2>
 
         <p>
           If you have questions about these Terms &amp; Conditions, please

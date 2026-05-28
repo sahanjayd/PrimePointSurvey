@@ -16,6 +16,10 @@ const faqs = [
     a: 'We inspect visible and accessible areas including structure, exterior, interior, roofing, subfloor, and more.',
   },
   {
+    q: 'Do you inspect hidden or inaccessible areas?',
+    a: 'All inspections are visual and non-invasive. We do not inspect areas that are concealed, unsafe, or inaccessible at the time of inspection. Findings are based only on what can be seen during the inspection.',
+  },
+  {
     q: 'How do I book an inspection?',
     a: 'You can contact us by phone, email, or submit an enquiry through the contact page.',
   },

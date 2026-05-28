@@ -70,7 +70,7 @@ export default function PrivacyPage() {
           All third parties are required to handle your information securely.
         </p>
 
-        <h2>4. Data Storage & Security</h2>
+        <h2>4. Data Storage &amp; Security</h2>
 
         <p>
           We take reasonable steps to protect your information from loss, misuse,
@@ -82,7 +82,16 @@ export default function PrivacyPage() {
           password-protected systems.
         </p>
 
-        <h2>5. Website Cookies & Analytics</h2>
+        <h2>5. Data Retention &amp; Destruction</h2>
+
+        <p>
+          We retain personal information only for as long as necessary to provide
+          our services, meet legal and insurance obligations, or resolve disputes.
+          When information is no longer required, we take reasonable steps to
+          securely destroy or permanently de-identify it.
+        </p>
+
+        <h2>6. Website Cookies &amp; Analytics</h2>
 
         <p>
           Our website may use cookies and analytics tools to improve user
@@ -94,7 +103,7 @@ export default function PrivacyPage() {
           You can disable cookies in your browser settings if you prefer.
         </p>
 
-        <h2>6. Accessing or Correcting Your Information</h2>
+        <h2>7. Accessing or Correcting Your Information</h2>
 
         <p>
           You may request access to the personal information we hold about you or
@@ -105,21 +114,58 @@ export default function PrivacyPage() {
           Requests can be made by contacting us using the details below.
         </p>
 
-        <h2>7. Third-Party Links</h2>
+        <h2>8. Third-Party Links</h2>
 
         <p>
           Our website may contain links to external websites. We are not
           responsible for the privacy practices of third-party sites.
         </p>
 
-        <h2>8. Changes to This Policy</h2>
+        <h2>9. Cross-Border Disclosure</h2>
+
+        <p>
+          We may use third-party service providers, including cloud-based
+          platforms, that store data on servers located in Australia or overseas.
+          Where personal information is disclosed to overseas recipients, we take
+          reasonable steps to ensure those recipients handle your information in
+          accordance with the Australian Privacy Principles.
+        </p>
+
+        <h2>10. Privacy Complaints</h2>
+
+        <p>
+          If you believe we have breached the Australian Privacy Principles or
+          mishandled your personal information, you may contact us using the
+          details below. We will respond to your complaint within 30 days.
+        </p>
+
+        <p>
+          If you are not satisfied with our response, you may lodge a complaint
+          with the Office of the Australian Information Commissioner (OAIC):
+        </p>
+
+        <p>
+          <strong>Office of the Australian Information Commissioner</strong>
+          <br />
+          <a
+            href="https://www.oaic.gov.au"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            www.oaic.gov.au
+          </a>
+          <br />
+          Phone: 1300 363 992
+        </p>
+
+        <h2>11. Changes to This Policy</h2>
 
         <p>
           We may update this Privacy Policy from time to time. The updated
           version will be posted on our website with the revised date.
         </p>
 
-        <h2>9. Contact Us</h2>
+        <h2>12. Contact Us</h2>
 
         <p>
           If you have questions about this Privacy Policy or wish to request

@@ -1,3 +1,7 @@
+'use client';
+
+import { useState } from 'react';
+
 const services = [
   'Insurance Damage Assessment',
   'Causation Report',
@@ -12,6 +16,47 @@ const services = [
 ];
 
 export default function ContactPage() {
+  const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
+  const [errorMsg, setErrorMsg] = useState('');
+
+  async function handleSubmit(e: { preventDefault(): void; currentTarget: HTMLFormElement }) {
+    e.preventDefault();
+    setStatus('sending');
+    setErrorMsg('');
+
+    const form = e.currentTarget;
+    const data = {
+      name: (form.elements.namedItem('contact-name') as HTMLInputElement).value,
+      phone: (form.elements.namedItem('contact-phone') as HTMLInputElement).value,
+      email: (form.elements.namedItem('contact-email') as HTMLInputElement).value,
+      address: (form.elements.namedItem('contact-address') as HTMLInputElement).value,
+      service: (form.elements.namedItem('contact-service') as HTMLSelectElement).value,
+      preference: (form.elements.namedItem('contact-preference') as HTMLSelectElement).value,
+      message: (form.elements.namedItem('contact-message') as HTMLTextAreaElement).value,
+    };
+
+    try {
+      const res = await fetch('/api/enquiry', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+      });
+
+      const json = await res.json();
+
+      if (!res.ok) {
+        setErrorMsg(json.error ?? 'Something went wrong. Please try again.');
+        setStatus('error');
+      } else {
+        setStatus('success');
+        form.reset();
+      }
+    } catch {
+      setErrorMsg('Unable to send your enquiry. Please check your connection and try again.');
+      setStatus('error');
+    }
+  }
+
   return (
     <main className="contact-page">
       <section className="contact-hero">
@@ -95,117 +140,159 @@ export default function ContactPage() {
           </div>
         </div>
 
-        <form className="contact-form-modern">
-          <div className="contact-form-header">
-            <div className="form-section-label">Inspection Enquiry</div>
-            <h2>Request a callback</h2>
-            <p>Fill in the details below and we&apos;ll get back to you shortly.</p>
+        {status === 'success' ? (
+          <div className="contact-success">
+            <div className="contact-success-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <path d="M9 12l2 2 4-4M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+            <h2>Enquiry sent!</h2>
+            <p>
+              Thanks for reaching out. We&apos;ll review your details and get back
+              to you within 24 hours.
+            </p>
+            <button
+              className="contact-submit"
+              onClick={() => setStatus('idle')}
+              style={{ marginTop: '1.5rem' }}
+            >
+              <span>Send another enquiry</span>
+            </button>
           </div>
+        ) : (
+          <form className="contact-form-modern" onSubmit={handleSubmit} noValidate>
+            <div className="contact-form-header">
+              <div className="form-section-label">Inspection Enquiry</div>
+              <h2>Request a callback</h2>
+              <p>Fill in the details below and we&apos;ll get back to you shortly.</p>
+            </div>
 
-          <div className="form-grid two">
+            <div className="form-grid two">
+              <div className="form-group">
+                <label className="form-label" htmlFor="contact-name">
+                  Full Name
+                </label>
+                <input
+                  id="contact-name"
+                  name="contact-name"
+                  className="form-input"
+                  type="text"
+                  placeholder="Your name"
+                  autoComplete="name"
+                  required
+                />
+              </div>
+
+              <div className="form-group">
+                <label className="form-label" htmlFor="contact-phone">
+                  Phone Number
+                </label>
+                <input
+                  id="contact-phone"
+                  name="contact-phone"
+                  className="form-input"
+                  type="tel"
+                  placeholder="0415 184 565"
+                  autoComplete="tel"
+                  required
+                />
+              </div>
+            </div>
+
             <div className="form-group">
-              <label className="form-label" htmlFor="contact-name">
-                Full Name
+              <label className="form-label" htmlFor="contact-email">
+                Email Address
               </label>
               <input
-                id="contact-name"
+                id="contact-email"
+                name="contact-email"
+                className="form-input"
+                type="email"
+                placeholder="you@example.com"
+                autoComplete="email"
+                required
+              />
+            </div>
+
+            <div className="form-group">
+              <label className="form-label" htmlFor="contact-address">
+                Property Address
+              </label>
+              <input
+                id="contact-address"
+                name="contact-address"
                 className="form-input"
                 type="text"
-                placeholder="Your name"
-                autoComplete="name"
+                placeholder="123 Main St, Melbourne"
+                autoComplete="street-address"
               />
             </div>
 
-            <div className="form-group">
-              <label className="form-label" htmlFor="contact-phone">
-                Phone Number
-              </label>
-              <input
-                id="contact-phone"
-                className="form-input"
-                type="tel"
-                placeholder="0415 184 565"
-                autoComplete="tel"
-              />
-            </div>
-          </div>
+            <div className="form-grid two">
+              <div className="form-group">
+                <label className="form-label" htmlFor="contact-service">
+                  Service Required
+                </label>
 
-          <div className="form-group">
-            <label className="form-label" htmlFor="contact-email">
-              Email Address
-            </label>
-            <input
-              id="contact-email"
-              className="form-input"
-              type="email"
-              placeholder="you@example.com"
-              autoComplete="email"
-            />
-          </div>
+                <div className="service-select-wrap">
+                  <select id="contact-service" name="contact-service" className="form-input service-select">
+                    {services.map((service) => (
+                      <option key={service}>{service}</option>
+                    ))}
+                  </select>
+                </div>
+              </div>
 
-          <div className="form-group">
-            <label className="form-label" htmlFor="contact-address">
-              Property Address
-            </label>
-            <input
-              id="contact-address"
-              className="form-input"
-              type="text"
-              placeholder="123 Main St, Melbourne"
-              autoComplete="street-address"
-            />
-          </div>
+              <div className="form-group">
+                <label className="form-label" htmlFor="contact-preference">
+                  Preferred Contact
+                </label>
 
-          <div className="form-grid two">
-            <div className="form-group">
-              <label className="form-label" htmlFor="contact-service">
-                Service Required
-              </label>
-
-              <div className="service-select-wrap">
-                <select id="contact-service" className="form-input service-select">
-                  {services.map((service) => (
-                    <option key={service}>{service}</option>
-                  ))}
+                <select id="contact-preference" name="contact-preference" className="form-input">
+                  <option>Phone</option>
+                  <option>Email</option>
+                  <option>Either is fine</option>
                 </select>
               </div>
             </div>
 
             <div className="form-group">
-              <label className="form-label" htmlFor="contact-preference">
-                Preferred Contact
+              <label className="form-label" htmlFor="contact-message">
+                Message
               </label>
-
-              <select id="contact-preference" className="form-input">
-                <option>Phone</option>
-                <option>Email</option>
-                <option>Either is fine</option>
-              </select>
+              <textarea
+                id="contact-message"
+                name="contact-message"
+                className="form-input contact-textarea"
+                placeholder="Tell us about the property, timing, access details, or any concerns..."
+              />
             </div>
-          </div>
 
-          <div className="form-group">
-            <label className="form-label" htmlFor="contact-message">
-              Message
-            </label>
-            <textarea
-              id="contact-message"
-              className="form-input contact-textarea"
-              placeholder="Tell us about the property, timing, access details, or any concerns..."
-            />
-          </div>
+            {status === 'error' && (
+              <p className="contact-form-error" role="alert">
+                {errorMsg}
+              </p>
+            )}
 
-          <button className="contact-submit" type="submit">
-            <span>Send Enquiry</span>
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M5 12h14M13 5l7 7-7 7" />
-            </svg>
-          </button>
+            <button
+              className="contact-submit"
+              type="submit"
+              disabled={status === 'sending'}
+            >
+              <span>{status === 'sending' ? 'Sending…' : 'Send Enquiry'}</span>
+              {status !== 'sending' && (
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M5 12h14M13 5l7 7-7 7" />
+                </svg>
+              )}
+            </button>
 
-          <p className="contact-form-note">
-            By submitting this form, you agree to be contacted about your enquiry.
-          </p>
-        </form>
+            <p className="contact-form-note">
+              By submitting this form, you agree to be contacted about your enquiry.
+            </p>
+          </form>
+        )}
       </section>
     </main>
   );

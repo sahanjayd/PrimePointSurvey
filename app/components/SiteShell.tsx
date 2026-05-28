@@ -181,6 +181,11 @@ export default function SiteShell({ children }: { children: ReactNode }) {
           </div>
         </div>
 
+        <div className="footer-disclaimer">
+          All inspections are visual and non-invasive, and findings are based on
+          accessible areas at the time of inspection.
+        </div>
+
         <div className="footer-bottom">
           <span>© 2026 Prime Point Surveying. All Rights Reserved.</span>
 
