@@ -189,6 +189,8 @@ export default function SiteShell({ children }: { children: ReactNode }) {
         <div className="footer-bottom">
           <span>© 2026 Prime Point Surveying. All Rights Reserved.</span>
 
+          <span className="footer-abn">ABN: 25 741 380 226</span>
+
           <div className="footer-legal-links">
             <Link href="/privacy">Privacy Policy</Link>
             <span>•</span>

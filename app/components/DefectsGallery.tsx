@@ -29,6 +29,11 @@ const defects = [
     alt: 'Digital level showing floor slope deviation',
     caption: 'Digital level floor slope reading',
   },
+  {
+    src: '/img-06.png',
+    alt: 'Vertical crack in brick veneer wall',
+    caption: 'Vertical Crack — Brick Veneer Wall',
+  },
 ];
 
 export default function DefectsGallery() {

@@ -1896,6 +1896,11 @@ button {
   line-height: 1.6;
 }
 
+.footer-abn {
+  font-size: 0.78rem;
+  color: rgba(255, 255, 255, 0.35);
+}
+
 /* Legal pages */
 .legal-page {
   padding: 8rem 5% 6rem;
@@ -2913,5 +2918,25 @@ button {
   /* Services CTA on mobile */
   .services-cta {
     padding: 2rem 1.25rem;
+  }
+
+  /* Services inclusions card: reduce padding to prevent overflow */
+  .services-inclusions {
+    padding: 1.5rem 1.25rem;
+  }
+
+  /* Inclusion feature cards: stack to single column */
+  .inclusion-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Quote form: stack two-column rows to single column */
+  .form-grid.two {
+    grid-template-columns: 1fr;
+  }
+
+  /* Quote panel form: tighter horizontal padding on narrow screens */
+  .panel-form {
+    padding: 1.75rem 1.25rem 2rem;
   }
 }
