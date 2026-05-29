@@ -108,10 +108,10 @@ export default function ContactPage() {
             <div>
               <div className="contact-label">Email</div>
               <a
-                href="mailto:info@primepointsurveying.com.au"
+                href="mailto:info@primepointsurveying.com"
                 className="contact-value"
               >
-                info@primepointsurveying.com.au
+                info@primepointsurveying.com
               </a>
             </div>
           </div>

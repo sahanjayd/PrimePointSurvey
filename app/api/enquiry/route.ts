@@ -31,7 +31,7 @@ export async function POST(req: NextRequest) {
   }
 
   const resend = new Resend(process.env.RESEND_API_KEY);
-  const to = process.env.EMAIL_TO ?? 'bookings@primepointsurveying.com.au';
+  const to = process.env.EMAIL_TO ?? 'bookings@primepointsurveying.com';
   const from = process.env.EMAIL_FROM ?? 'noreply@primepointsurveying.com.au';
 
   const html = `

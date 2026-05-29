@@ -177,7 +177,7 @@ export default function PrivacyPage() {
           <br />
           Melton / Harkness, Victoria
           <br />
-          Email: info@primepointsurveying.com.au
+          Email: info@primepointsurveying.com
         </p>
       </section>
     </main>

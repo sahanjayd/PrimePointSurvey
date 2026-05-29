@@ -121,7 +121,7 @@ export default function SiteShell({ children }: { children: ReactNode }) {
           <div>
             <div className="footer-col-title">Contact Us</div>
           <a
-            href="mailto:info@primepointsurveying.com.au"
+            href="mailto:info@primepointsurveying.com"
             className="footer-contact-item"
           > 
               <span className="footer-contact-icon">
@@ -129,7 +129,7 @@ export default function SiteShell({ children }: { children: ReactNode }) {
                   <path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                 </svg>
               </span>
-              <span>info@primepointsurveying.com.au</span>
+              <span>info@primepointsurveying.com</span>
           </a>    
             
           <a
