@@ -16,18 +16,18 @@ const defects = [
   },
   {
     src: '/imge-03.PNG',
-    alt: 'Out-of-plumb wall measurement using digital level',
-    caption: 'Wall plumb / out-of-plumb measurement',
-  },
-  {
-    src: '/imge-04.PNG',
     alt: 'Moisture and thermal inspection under tiles',
     caption: 'Moisture and thermal inspection under tiles',
   },
   {
-    src: '/img-05.PNG',
+    src: '/imge-04.PNG',
     alt: 'Digital level showing floor slope deviation',
     caption: 'Digital level floor slope reading',
+  },
+  {
+    src: '/img-05.PNG',
+    alt: 'Out-of-plumb wall measurement using digital level',
+    caption: 'Wall plumb / out-of-plumb measurement',
   },
   {
     src: '/img-06.png',

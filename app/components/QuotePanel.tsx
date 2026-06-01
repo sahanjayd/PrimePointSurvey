@@ -17,7 +17,7 @@ const services = [
   'Thermal Imaging Scan',
   'Roof Void Inspection',
   'Detailed Scope of Works Only',
-  'Complex Claim (Hourly)',
+  'Complex Claim / Large Claim',
 ];
 
 export default function QuotePanel({ open, onClose }: QuotePanelProps) {

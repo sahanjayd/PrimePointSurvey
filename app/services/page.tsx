@@ -6,7 +6,6 @@ const insuranceServices = [
     title: 'Minor Damage / Causation Report',
     desc: 'Assessment and reporting of minor property damage including visible defects, likely cause, and repair recommendations for insurance submissions.',
     bestFor: 'Minor storm, impact or moisture damage claims',
-    price: '$550',
     icon: (
       <svg viewBox="0 0 24 24" aria-hidden="true">
         <path d="M12 3l7 3v5c0 4.5-2.8 8.5-7 10-4.2-1.5-7-5.5-7-10V6z" />
@@ -18,7 +17,6 @@ const insuranceServices = [
     title: 'Major Damage / Structural Report',
     desc: 'Thorough assessment of significant structural or building damage with detailed findings, cause analysis, and rectification guidance.',
     bestFor: 'Major storm events, structural damage, severe water damage',
-    price: '$750',
     icon: (
       <svg viewBox="0 0 24 24" aria-hidden="true">
         <path d="M3 11l9-7 9 7" />
@@ -31,7 +29,6 @@ const insuranceServices = [
     title: 'Full Insurance Assessment incl. Scope of Works',
     desc: 'Comprehensive assessment covering all damage, cause analysis, a complete scope of works, and repair cost guidance for your insurer.',
     bestFor: 'Full claims, complex damage, scope-required insurers',
-    price: '$950',
     icon: (
       <svg viewBox="0 0 24 24" aria-hidden="true">
         <path d="M7 3h7l4 4v14H7z" />
@@ -45,7 +42,6 @@ const insuranceServices = [
     title: 'Re-Inspection / Follow-Up Report',
     desc: 'Follow-up inspection to verify completed repairs, assess ongoing concerns, or provide updated findings for an existing claim.',
     bestFor: 'Repair verification, ongoing claims, dispute follow-up',
-    price: '$295',
     icon: (
       <svg viewBox="0 0 24 24" aria-hidden="true">
         <path d="M1 4v6h6" />
@@ -60,7 +56,6 @@ const additionalServices = [
   {
     title: 'Moisture Mapping',
     desc: 'Targeted moisture detection to identify water ingress, elevated moisture levels, or hidden dampness throughout the property.',
-    price: '$79',
     icon: (
       <svg viewBox="0 0 24 24" aria-hidden="true">
         <path d="M12 2C6.5 8.5 4 13 4 16a8 8 0 0 0 16 0c0-3-2.5-7.5-8-14z" />
@@ -70,7 +65,6 @@ const additionalServices = [
   {
     title: 'Thermal Imaging Scan',
     desc: 'Infrared thermal imaging to detect temperature anomalies, moisture intrusion, insulation gaps, or concealed defects.',
-    price: '$99',
     icon: (
       <svg viewBox="0 0 24 24" aria-hidden="true">
         <circle cx="12" cy="12" r="3" />
@@ -81,7 +75,6 @@ const additionalServices = [
   {
     title: 'Roof Void Inspection',
     desc: 'Visual inspection of the roof space to identify structural concerns, moisture ingress, pest activity, or insulation deficiencies.',
-    price: '$79',
     icon: (
       <svg viewBox="0 0 24 24" aria-hidden="true">
         <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
@@ -92,7 +85,6 @@ const additionalServices = [
   {
     title: 'Detailed Scope of Works Only',
     desc: 'Preparation of a detailed scope of works document outlining required repairs, materials, priorities, and rectification guidance.',
-    price: '$350',
     icon: (
       <svg viewBox="0 0 24 24" aria-hidden="true">
         <path d="M8 3h8l2 3v15H6V6z" />
@@ -205,7 +197,6 @@ export default function ServicesPage() {
                   <span>Best for</span>
                   <p>{service.bestFor}</p>
                 </div>
-                <div className="service-price">{service.price}</div>
               </div>
             </article>
           ))}
@@ -220,8 +211,8 @@ export default function ServicesPage() {
           </span>
           <div>
             <strong>Urgent / Same-Day Assessment</strong>
-            {' '}— a <strong>+$100 surcharge</strong> applies for same-day or
-            urgent assessment requests.
+            {' '}— available for urgent or same-day requests. Contact us to
+            discuss availability and timing.
           </div>
         </div>
       </section>
@@ -242,7 +233,6 @@ export default function ServicesPage() {
             <article key={service.title} className="service-card">
               <div className="service-card-top">
                 <div className="service-icon-wrap">{service.icon}</div>
-                <div className="service-price-badge">{service.price}</div>
               </div>
 
               <h2 className="service-title">{service.title}</h2>
@@ -267,11 +257,8 @@ export default function ServicesPage() {
           </div>
 
           <div className="complex-claims-rate">
-            <div className="complex-rate-label">Hourly Rate</div>
-            <div className="complex-rate-price">
-              $150<span>/hr</span>
-            </div>
-            <p>Billed in hourly increments. Estimated hours confirmed upfront.</p>
+            <div className="complex-rate-label">Tailored to Your Claim</div>
+            <p>Pricing is confirmed upfront based on scope and estimated site time. Contact us to discuss your claim before we commence.</p>
             <Link href="/contact" className="btn btn-primary">
               Discuss Your Claim
             </Link>

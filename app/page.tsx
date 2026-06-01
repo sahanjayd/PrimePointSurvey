@@ -5,7 +5,6 @@ const services = [
     title: 'Full Insurance Assessment incl. Scope of Works',
     desc: 'Comprehensive damage assessment, cause analysis, and complete scope of works prepared for insurance submission.',
     category: 'Insurance',
-    price: '$950',
     icon: (
       <svg viewBox="0 0 24 24" aria-hidden="true">
         <path d="M7 3h7l4 4v14H7z" />
@@ -19,7 +18,6 @@ const services = [
     title: 'Minor Damage / Causation Report',
     desc: 'Clear assessment of minor property damage including defect findings, probable cause, and repair recommendations.',
     category: 'Insurance',
-    price: '$550',
     icon: (
       <svg viewBox="0 0 24 24" aria-hidden="true">
         <path d="M12 3l7 3v5c0 4.5-2.8 8.5-7 10-4.2-1.5-7-5.5-7-10V6z" />
@@ -31,7 +29,6 @@ const services = [
     title: 'Thermal Imaging Scan',
     desc: 'Infrared thermal imaging to detect moisture intrusion, insulation gaps, and concealed defects not visible to the eye.',
     category: 'Additional',
-    price: '$99',
     icon: (
       <svg viewBox="0 0 24 24" aria-hidden="true">
         <circle cx="12" cy="12" r="3" />
@@ -199,8 +196,8 @@ export default function HomePage() {
 
           <p className="section-body services-preview-sub">
             A snapshot of our main services. Visit the services page for our
-            full pricing list, including moisture mapping, thermal imaging, roof
-            void inspections, and complex claim rates.
+            full range, including moisture mapping, thermal imaging, roof void
+            inspections, and complex claim assessments.
           </p>
         </div>
 
@@ -216,7 +213,6 @@ export default function HomePage() {
 
               <p className="service-desc">{service.desc}</p>
 
-              <div className="home-service-price">{service.price}</div>
             </article>
           ))}
         </div>
